@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Title from '../components/title'
+import Article from '../components/article'
 
 export default ({ data }) => (
   <Layout>
@@ -17,12 +18,14 @@ export default ({ data }) => (
     </p>
     <div>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <article>
-          <div>
-            <strong>{node.frontmatter.title}</strong>
-          </div>
-          <div>{node.excerpt}</div>
-        </article>
+        <Article
+          id={node.id}
+          to="/"
+          keywords={node.frontmatter.keywords}
+          title={node.frontmatter.title}
+          date={node.frontmatter.date}
+          excerpt={node.excerpt}
+        />
       ))}
     </div>
   </Layout>
