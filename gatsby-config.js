@@ -6,7 +6,7 @@
 
 module.exports = {
   /* Your site config here */
-
+  pathPrefix: '/gatsby-simple-blog',
   siteMetadata: {
     title: 'Gatsby blog',
   },
