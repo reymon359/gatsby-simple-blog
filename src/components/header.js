@@ -2,6 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 import styles from "./header.module.scss"
 
+// HeaderLink component
+const HeaderLink = props => (
+  <Link className={styles.link} to={props.to}>
+    {props.text}
+  </Link>
+)
+
 export default () => (
   <header className={styles.container}>
     <div className={styles.row}>
@@ -9,7 +16,8 @@ export default () => (
     </div>
 
     <div className={styles.row}>
-      <Link to="/">BLOG</Link>|<Link to="/about">ARTICLES</Link>
+      <HeaderLink to="/" text="ARTICLES" />
+      <HeaderLink to="/about" text="ABOUT" />
     </div>
   </header>
 )
